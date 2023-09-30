@@ -1,9 +1,9 @@
 import express from 'express'
-import { createUser, getUserByEmail } from 'db/users'
-import { authentication, random } from 'helpers'
+import { createUser, getUserByEmail } from '../db/users'
+import { authentication, random } from '../helpers/index'
 export const register = async(req:express.Request,res:express.Response)=>{
     try {
-        const {email,password,username} = req.body()
+        const {email,password,username} = req.body
     if(!email || !password || !username){
         return res.sendStatus(400)
     }
